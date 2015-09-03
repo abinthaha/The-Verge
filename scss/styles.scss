@@ -1,112 +1,174 @@
-$list_hover : #fa4b2a;
-$menu_border : #fa4b2a;
-$date_color : #FA4B2A;
+@import "fonts.scss";
+
+
 $inactive : rgb(75, 67, 62);
+$title_font : 'Roboto', sans-serif;
+$article_font : 'Fjalla One', sans-serif;
+
+$side_menu_font : 'Oswald', sans-serif;
+$trending_now_dropdown_font : 'Lora', serif;
+$time_font : 'Slabo 27px', serif;
+
+$title_orange : #FA4B2A;
+$title_red : #F82902;
+$grey1 : #777777;
+$grey2 : #8b8787;
+$grey3 : #a5a0a0;
+$grey4 : #b2adad;
+$grey5 : #d0caca;
+$grey6 : #eadfdf;
+
 body{
     font-size: 17px;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
 }
 #mob_topbar{
-    background-color: #fa4b2a;
-    margin-right: -10;
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
+    background-color: $title_orange;
+    padding-left: 10px;
+    margin: 0px;
     height: 60px;
-    img{
-        padding-top: 15px;
+    padding: 0px 5px 0px 0px;
+    box-shadow: 0px 1px 8px #888888;
+    #menu_button{
+        width: 25px;
+        margin-left: 10px;
+        cursor: pointer;
     }
+    #title {
+        height: 23px;
+        width: auto;
+        margin-left: 10px;
+        transition: 0.2s all linear;
+    }
+
+    #trending_now_dropdown {
+      display: none;
+      height: 60px;
+      margin-top: -51px;
+      position: relative;
+      margin-right: 75px;
+      margin-left: 300px;
+      background-color: white;
+
+
+      #dropdown_content {
+        font-family: $side_menu_font;
+        color: $title_orange;
+        font-size: 11px;
+        font-weight: 400;
+        width: 93%;
+        padding: 5px 10px;
+        box-sizing: border-box;
+
+        a {
+          font-family: $trending_now_dropdown_font;
+          color: black;
+          text-decoration: none;
+          font-size: 13px;
+          font-weight: 500;
+
+          &:hover {
+            color: $title_orange;
+          }
+        }
+      }
+
+      #down_button {
+        width: 35px;
+        height: 60px;
+        right: 2px;
+        top: 0px;
+        line-height: 3.5;
+        text-align: center;
+        float: right;
+        position: absolute;
+        margin: 0px;
+        background-color: $grey5;
+
+        img {
+          width: 10px;
+        }
+      }
+    }
+
+
+    #new_articles {
+      font-family: $title_font;
+      display: inline-block;
+      position: absolute;
+      background-color: #FA4B2A;
+      width: 80px;
+      height: 60px;
+      float: right;
+      right: 2px;
+      margin-top: -60px;
+      margin-bottom: 5px;
+      text-align: center;
+      border-left: 1px solid #FFF;
+      padding-top: 7px;
+
+      a {
+
+      color: white;
+      text-decoration: none;
+      line-height: 0.65;
+      display: block;
+
+      strong {
+        font-family: $article_font;
+        font-size: 1.8em;
+        line-height: 1;
+        display: block;
+      }
+
+      span {
+        font-size: .55rem;
+        font-style: normal;
+        font-weight: bold;
+        display: block;
+        line-height: .5;
+      }
+    }
+  }
 }
+
+
 @media (min-width: 320px) and (max-width: 599px) {
     #mob_topbar{
-        img{
-            width: 136px;
-            height: auto;
-            padding-top: 20px;
+        #title{
+            height: 30px;
+            padding-top: 15px;
         }
     }
 }
 @media (min-width: 600px) {
     #mob_topbar{
-        img{
-            width: 175px;
-            height: auto;
+        #title{
+          padding-top: 10px;
+            height: 35px;
         }
     }
 }
 @media (max-width: 319px) {
     #mob_topbar{
-        img{
-            width: 107px;
-            height: auto;
-            padding-top: 21px;
+        #title{
+          padding-top: 20px;
+            height: 25px;
         }
     }
 }
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5ewrjPiaoEww8AihgqWRJAo.woff) format('woff');
-}
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 36px;
-  // line-height: 1;
-  letter-spacing: normal;
-  padding-bottom: 3px;
-  padding-top: 10px;
-  text-transform: none;
-  display: inline-block;
-  word-wrap: normal;
-  -moz-font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale;
-}
-.menu{
-    color: white;
-    top: -10px;
-    float: left;
-    padding: 5px 10px 0px 10px;
-    z-index: 5;
-    cursor: pointer;
-}
-.notification{
-    // background: #fa4b2a;
-    font-family: ff-din-web-condensed,Helvetica,sans-serif;
-    text-transform: uppercase;
-    background-color: #FA4B2A;
-    border-left: 1px solid #FFF;
-    color: #FFF;
-    text-align: center;
-    display: block;
-    width: 80px;
-    height: 50px;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    margin: 5px 0px;
-    z-index: 0;
-    border-left: 1px solid white;
-    float: right;
-    text-align: center;
-    color: white;
-    line-height: .5;
-    cursor: pointer;
-}
-strong{
-    font-family: ff-din-web-condensed,;
-    font-size: 2em;
-    line-height: 1.15;
-    display: block;
-}
-em{
-    font-size: .5em;
-    font-style: normal;
-    font-weight: 600;
+
+@media (min-width: 700px) {
+  #mob_topbar {
+    #trending_now_dropdown {
+      display: block;
+    }
+  }
 }
 .home, .long, .review, .video, .us{
-    border-left: 4px solid $menu_border;
+    border-left: 4px solid $title_orange;
 }
 .tech, .cars{
     border-left: 4px solid rgba(74, 233, 27, 0.75);
@@ -174,7 +236,7 @@ em{
         list-style-type: none;
         font-size: 20px;
         &:hover{
-            color: $list_hover;
+            color: $title_orange;
         }
         img{
             display: inline-block;
@@ -189,7 +251,7 @@ em{
         z-index: 5;
         // width: 250px;
         margin-top: 0px;
-        border-right: 2px solid $menu_border;
+        border-right: 2px solid $title_orange;
         .long{
             img{
                 padding-top: 25px;
@@ -227,7 +289,7 @@ em{
     top: 0;
     float: right;
     z-index: 13;
-    position: absolute;
+    position: fixed;
     overflow: scroll;
     height: 100%;
     right: -250px;
@@ -239,7 +301,7 @@ em{
     ul{
         z-index: 5;
         margin-top: 0px;
-        border-left: 2px solid $menu_border;
+        border-left: 2px solid $title_orange;
         li{
             list-style: none;
             padding: 10px;
@@ -255,13 +317,13 @@ em{
                 text-transform: uppercase;
                 padding: 2px 0px;
                 border-radius: 2px;
-                background-color:$date_color;
+                background-color:$title_orange;
             }
             a{
                 color: black;
                 text-decoration: none;
                 &:hover{
-                    color: $date_color;
+                    color: $title_orange;
 
                 }
             }

@@ -1,92 +1,115 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 body {
-  font-size: 17px; }
+  font-size: 17px;
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden; }
 
 #mob_topbar {
-  background-color: #fa4b2a;
-  margin-right: -10;
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  height: 60px; }
-  #mob_topbar img {
-    padding-top: 15px; }
+  background-color: #FA4B2A;
+  padding-left: 10px;
+  margin: 0px;
+  height: 60px;
+  padding: 0px 5px 0px 0px;
+  box-shadow: 0px 1px 8px #888888; }
+  #mob_topbar #menu_button {
+    width: 25px;
+    margin-left: 10px;
+    cursor: pointer; }
+  #mob_topbar #title {
+    height: 23px;
+    width: auto;
+    margin-left: 10px;
+    transition: 0.2s all linear; }
+  #mob_topbar #trending_now_dropdown {
+    display: none;
+    height: 60px;
+    margin-top: -51px;
+    position: relative;
+    margin-right: 75px;
+    margin-left: 300px;
+    background-color: white; }
+    #mob_topbar #trending_now_dropdown #dropdown_content {
+      font-family: "Oswald", sans-serif;
+      color: #FA4B2A;
+      font-size: 11px;
+      font-weight: 400;
+      width: 93%;
+      padding: 5px 10px;
+      box-sizing: border-box; }
+      #mob_topbar #trending_now_dropdown #dropdown_content a {
+        font-family: "Lora", serif;
+        color: black;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500; }
+        #mob_topbar #trending_now_dropdown #dropdown_content a:hover {
+          color: #FA4B2A; }
+    #mob_topbar #trending_now_dropdown #down_button {
+      width: 35px;
+      height: 60px;
+      right: 2px;
+      top: 0px;
+      line-height: 3.5;
+      text-align: center;
+      float: right;
+      position: absolute;
+      margin: 0px;
+      background-color: #d0caca; }
+      #mob_topbar #trending_now_dropdown #down_button img {
+        width: 10px; }
+  #mob_topbar #new_articles {
+    font-family: "Roboto", sans-serif;
+    display: inline-block;
+    position: absolute;
+    background-color: #FA4B2A;
+    width: 80px;
+    height: 60px;
+    float: right;
+    right: 2px;
+    margin-top: -60px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-left: 1px solid #FFF;
+    padding-top: 7px; }
+    #mob_topbar #new_articles a {
+      color: white;
+      text-decoration: none;
+      line-height: 0.65;
+      display: block; }
+      #mob_topbar #new_articles a strong {
+        font-family: "Fjalla One", sans-serif;
+        font-size: 1.8em;
+        line-height: 1;
+        display: block; }
+      #mob_topbar #new_articles a span {
+        font-size: .55rem;
+        font-style: normal;
+        font-weight: bold;
+        display: block;
+        line-height: .5; }
 
 @media (min-width: 320px) and (max-width: 599px) {
-  #mob_topbar img {
-    width: 136px;
-    height: auto;
-    padding-top: 20px; } }
+  #mob_topbar #title {
+    height: 30px;
+    padding-top: 15px; } }
 @media (min-width: 600px) {
-  #mob_topbar img {
-    width: 175px;
-    height: auto; } }
+  #mob_topbar #title {
+    padding-top: 10px;
+    height: 35px; } }
 @media (max-width: 319px) {
-  #mob_topbar img {
-    width: 107px;
-    height: auto;
-    padding-top: 21px; } }
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://fonts.gstatic.com/s/materialicons/v7/2fcrYFNaTjcS6g4U3t-Y5ewrjPiaoEww8AihgqWRJAo.woff) format("woff"); }
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 36px;
-  letter-spacing: normal;
-  padding-bottom: 3px;
-  padding-top: 10px;
-  text-transform: none;
-  display: inline-block;
-  word-wrap: normal;
-  -moz-font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale; }
-
-.menu {
-  color: white;
-  top: -10px;
-  float: left;
-  padding: 5px 10px 0px 10px;
-  z-index: 5;
-  cursor: pointer; }
-
-.notification {
-  font-family: ff-din-web-condensed,Helvetica,sans-serif;
-  text-transform: uppercase;
-  background-color: #FA4B2A;
-  border-left: 1px solid #FFF;
-  color: #FFF;
-  text-align: center;
-  display: block;
-  width: 80px;
-  height: 50px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin: 5px 0px;
-  z-index: 0;
-  border-left: 1px solid white;
-  float: right;
-  text-align: center;
-  color: white;
-  line-height: .5;
-  cursor: pointer; }
-
-strong {
-  font-family: ff-din-web-condensed;
-  font-size: 2em;
-  line-height: 1.15;
-  display: block; }
-
-em {
-  font-size: .5em;
-  font-style: normal;
-  font-weight: 600; }
-
+  #mob_topbar #title {
+    padding-top: 20px;
+    height: 25px; } }
+@media (min-width: 700px) {
+  #mob_topbar #trending_now_dropdown {
+    display: block; } }
 .home, .long, .review, .video, .us {
-  border-left: 4px solid #fa4b2a; }
+  border-left: 4px solid #FA4B2A; }
 
 .tech, .cars {
   border-left: 4px solid rgba(74, 233, 27, 0.75); }
@@ -150,7 +173,7 @@ em {
     list-style-type: none;
     font-size: 20px; }
     .side_menu li:hover {
-      color: #fa4b2a; }
+      color: #FA4B2A; }
     .side_menu li img {
       display: inline-block;
       width: 21px;
@@ -160,7 +183,7 @@ em {
   .side_menu ul {
     z-index: 5;
     margin-top: 0px;
-    border-right: 2px solid #fa4b2a; }
+    border-right: 2px solid #FA4B2A; }
     .side_menu ul .long img {
       padding-top: 25px; }
     .side_menu ul .user {
@@ -187,7 +210,7 @@ em {
   top: 0;
   float: right;
   z-index: 13;
-  position: absolute;
+  position: fixed;
   overflow: scroll;
   height: 100%;
   right: -250px;
@@ -199,7 +222,7 @@ em {
   .notifsm ul {
     z-index: 5;
     margin-top: 0px;
-    border-left: 2px solid #fa4b2a; }
+    border-left: 2px solid #FA4B2A; }
     .notifsm ul li {
       list-style: none;
       padding: 10px;
