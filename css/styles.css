@@ -363,7 +363,8 @@ body {
     .side_menu ul #reviews {
       border-left-color: #539c06; }
     .side_menu ul #video {
-      border-left-color: #69261b; }
+      border-left-color: #69261b;
+      background-image: none; }
     .side_menu ul #tech {
       border-left-color: #212fed; }
     .side_menu ul #science {
@@ -443,6 +444,11 @@ body {
   .contents {
     margin-top: 63px;
     margin-left: 2%; } }
+@media (min-width: 700px) {
+  .contents .photos {
+    display: flex; }
+    .contents .photos #first_div {
+      width: 80%; } }
 .byline {
   font-family: Helvetica,Arial,sans-serif;
   font-size: .75rem;
@@ -658,7 +664,7 @@ html {
     clear: both; }
   .row .post11 {
     height: 175px;
-    width: 85%;
+    width: 60%;
     display: inline-block;
     vertical-align: top;
     white-space: normal; }
@@ -701,31 +707,32 @@ html {
 .videobar {
   display: flex; }
 
-.subvideo li {
+.sub_videos .each li {
   display: flex;
   list-style: none;
   margin-left: -27px;
   margin-top: -17px;
   border-bottom: 1px solid black;
   background-color: #373837; }
-  .subvideo li:hover {
+  .sub_videos .each li:hover {
     background-color: #3b3a3a;
     cursor: pointer; }
-    .subvideo li:hover h4 {
+    .sub_videos .each li:hover h4 {
       color: #FA4B2A;
       cursor: pointer; }
-  .subvideo li img {
+  .sub_videos .each li img {
     height: 82px;
     width: 125px;
     display: inline-flex; }
-  .subvideo li h4 {
+  .sub_videos .each li h4 {
     color: white;
     font-size: 0.9rem;
     text-align: center;
     font-weight: 200;
-    padding: 15px;
+    padding: 0px;
+    margin-left: -20px;
     font-family: "Slabo 27px", serif; }
-  .subvideo li a:before {
+  .sub_videos .each li a:before {
     transition: ease all .5s;
     border-radius: 40px;
     border: 2px solid;
@@ -742,7 +749,7 @@ html {
     width: 40px;
     height: 40px;
     opacity: .5; }
-  .subvideo li a:after {
+  .sub_videos .each li a:after {
     display: block;
     width: 0;
     height: 0;
@@ -759,6 +766,22 @@ html {
     z-index: 2;
     opacity: .8; }
 
+@media (min-width: 700px) {
+  .contents .video1 {
+    display: flex;
+    flex-direction: row; }
+    .contents .video1 .vid {
+      width: 60%; }
+    .contents .video1 .sub_videos {
+      display: flex;
+      width: 41%;
+      height: 282px;
+      overflow-y: scroll;
+      margin-left: -13px;
+      margin-top: 70px;
+      flex-direction: column; }
+    .contents .video1 .see_more {
+      display: none; } }
 .see_more {
   padding-top: 5px;
   text-align: center;
@@ -785,6 +808,9 @@ html {
     color: #444;
     padding-bottom: 5px; }
     .news ul li img {
+      display: table-cell;
+      vertical-align: top;
+      padding-right: 0.5rem;
       width: 80px;
       float: left; }
     .news ul li h3 {
@@ -800,9 +826,46 @@ html {
       font-weight: 200; }
       .news ul li h6 strong {
         font-weight: bold; }
+    .news ul li p {
+      display: none;
+      font-family: sans-serif;
+      font-size: 13px; }
 
+@media (min-width: 600px) {
+  .news ul {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: scroll; }
+    .news ul li {
+      height: auto;
+      width: 48%;
+      display: flex;
+      border-right: 1px solid #d0caca;
+      flex-direction: column;
+      position: relative;
+      flex-wrap: nowrap;
+      margin: 0px 0px;
+      padding: 5px 5px; }
+      .news ul li img {
+        width: 200px;
+        margin-top: 80px;
+        margin-left: 10%;
+        position: static; }
+      .news ul li h3 {
+        margin-left: 5px;
+        position: absolute;
+        margin-top: -280px; }
+      .news ul li h6 {
+        margin-left: 5px;
+        position: relative;
+        top: -220px; }
+      .news ul li p {
+        display: block; } }
+@media (min-width: 1024px) {
+  .news ul li {
+    width: 32%; } }
 #from_re {
-  margin-left: 20px;
+  margin: 20px;
   font-family: "Pathway Gothic One",sans-serif; }
   #from_re svg {
     margin-left: 10px;
@@ -832,6 +895,7 @@ html {
 .page_footer {
   position: absolute;
   width: 100%;
+  max-width: 1024px;
   margin-bottom: 20px;
   box-sizing: border-box;
   color: #999;
@@ -888,11 +952,29 @@ html {
     float: left;
     width: 33%;
     box-sizing: border-box; }
+  .page_footer .vox_media div {
+    position: relative;
+    bottom: 10px;
+    margin-left: 20%;
+    margin-top: 500px; }
+    .page_footer .vox_media div img {
+      width: 200px; }
+  .page_footer .vox_media p {
+    margin-left: 10%; }
+    .page_footer .vox_media p a {
+      color: #FA4B2A;
+      opacity: 0.7; }
+      .page_footer .vox_media p a:hover {
+        opacity: 1;
+        text-decoration: underline; }
 
 @media (min-width: 500px) {
   .page_footer .connects {
     display: block; }
   .page_footer .connects, .page_footer .sections, .page_footer .basics {
     width: 33%; } }
+@media (min-width: 1024px) {
+  .page_footer {
+    margin-left: 21px; } }
 
 /*# sourceMappingURL=styles.css.map */
